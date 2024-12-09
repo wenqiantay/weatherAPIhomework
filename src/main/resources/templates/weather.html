@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body data-th-object="${weather}">
+
+    <div>
+        <h1>Current weather in <span data-th-text="${cityname}"></span></h1>
+    </div>
+    <div>
+        <img data-th-src="'https://openweathermap.org/img/wn/' + *{icon} + '.png'">
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td data-th-text="*{main}">
+                </td>
+            </tr>
+            <tr>
+                <td data-th-text="*{description}"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h5>Retrieved from Cache: <span data-th-text="${isCached}"></span></h5>
+    </div>
+    <div>
+        <a href="/">Back</a>
+    </div>
+</body>
+</html>
